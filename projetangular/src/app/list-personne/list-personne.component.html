@@ -1,0 +1,41 @@
+<div id="content-wrapper" class="milieu mt-5 d-flex flex-column">
+    <div id="content">
+        <div class="container-fluid">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Liste des participants</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr style="text-align: center ">
+                                    <th>Nom</th>
+                                    <th>Prénom</th>
+                                    <th>Numero de telephone</th>
+                                    <th>Adresse email</th>
+                                    <th>Actions </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor= "let personne of personnes" style="text-align: center ">
+                                    <td>{{ personne.nom}}</td>
+                                    <td>{{ personne.prenoms}}</td>
+                                    <td>{{ personne.numero_tel}}</td>
+                                    <td>{{ personne.e_mail}}</td>
+                                    <td>
+                                        <button (click) = "modifiezPersonne(personne.id)" class = "btn btn-warning"> Modifier</button>
+                                        <button (click) = "supprimezPersonne(personne.id)" class = "btn btn-danger" style="margin-left: 10px"> supprimer</button>
+                                        <button (click) = "voirPersonne(personne.id)" class = "btn btn-info" style="margin-left: 10px"> voir</button>
+                                    </td>
+                    
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
